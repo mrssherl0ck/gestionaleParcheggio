@@ -12,7 +12,8 @@ namespace gestionaleParcheggio
         public string targa;
         public string entrata;
         public string uscita;
-
+        public float prezzo;
+        public DateTime minutiTrascorsi;
         //Obiettivo lettura e scrittura
         public DateTime dataOraEntrata { get; set; } = DateTime.Now;
         public DateTime? dataOraUscita { get; set; } = null;
@@ -28,6 +29,10 @@ namespace gestionaleParcheggio
             this.entrata = entrata;
             this.uscita = uscita;
         }*/
-
+        //Metodo
+        public DateTime()
+        {
+          return  
+        }
     }
 }

@@ -11,8 +11,9 @@ namespace gestionaleParcheggio
     {
         static void Main(string[] args)
         {
-         //Strutte per contenere i dati
+          //Campi
            List<Veicolo> parcheggio = new List<Veicolo>();
+            
 
             while (true)
             {
@@ -20,7 +21,7 @@ namespace gestionaleParcheggio
                 Console.WriteLine("1- Inserire Veicolo");
                 Console.WriteLine("2- Stampa veicoli presenti");
                 Console.WriteLine("3- Uscita Veicolo");
-                Console.WriteLine("4- Tariffa Oraria 2 euro. Importo da pagare:");
+                Console.WriteLine("4- Tariffa Oraria 2 euro. Importo:");
                 Console.WriteLine("\n9- Esci");
 
                 string scelta = Console.ReadLine();
@@ -49,9 +50,26 @@ namespace gestionaleParcheggio
                     string ricerca = Console.ReadLine();
                     foreach (Veicolo v in parcheggio)
                     {
-                        parcheggio.RemoveAt(parcheggio.IndexOf(v));
+                        if (v.targa == ricerca)
+                        {
+                            Console.WriteLine(v.targa, DateTime.Now, v.dataOraEntrata, v.dataOraUscita, v.prezzo);
+                            v.prezzo
+                            parcheggio.RemoveAt(parcheggio.IndexOf(v));
+                        }
                     }
                 }
+
+                if (scelta == "4")
+                {
+                    Console.WriteLine("da Pagare:");
+                    foreach (Veicolo v in parcheggio)
+                    {
+                        DateTime dataOraUscita = DateTime.Now;
+                        Console.WriteLine("Pagato. Grazie e Arrivederci.");
+                    }
+                }
+
+                Console.ReadLine();
             }
         }
     }
